@@ -1,7 +1,6 @@
 // Problem with Hackerearth and Axios
 
 const cheerio = require('cheerio');
-const fs = require('fs');
 var express = require('express')
 var cors = require('cors')
 var app = express()
@@ -20,10 +19,7 @@ module.exports = (html) => {
     let fully_solved_count = '';
     let partially_solved_count = '';
 
-    fs.writeFileSync('new.html', html);
-
     const $ = cheerio.load(html);
-    // fs.writeFileSync('new.html', html);
     // Extracting Name
     // $("h1.h2-style", html).each(function () {
     //     name = $(this).text();
