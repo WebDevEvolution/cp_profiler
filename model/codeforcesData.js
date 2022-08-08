@@ -2,16 +2,6 @@ const cheerio = require('cheerio');
 
 module.exports = (html) => {
 
-    // let name = '';
-    // let rating = '';
-    // let global_rank = '';
-    // let country_rank = '';
-    // let last_contest = '';
-    // let highest_rating = '';
-    // let profile_image = '';
-    // let fully_solved_count = '';
-    // let partially_solved_count = '';
-
     const $ = cheerio.load(html);
     
     // Extracting Name

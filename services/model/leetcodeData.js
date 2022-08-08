@@ -1,7 +1,6 @@
 // Problem with Leetcode and Axios
 
 const cheerio = require('cheerio');
-const fs = require('fs');
 
 module.exports = (html) => {
 
@@ -30,7 +29,6 @@ module.exports = (html) => {
     });
     rating = $('.shadow-level3 .text-label-2 .ttext-label-1').text();
     console.log($('.ttext-label-1', html).text());
-    fs.writeFileSync('new3.html', html);
     // console.log(rating)
 
     // Extracting Global Rank
