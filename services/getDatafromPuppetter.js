@@ -18,8 +18,7 @@ module.exports = async (url) => {
     });
     const page = await browser.newPage();
     await page.goto(url, {
-      waitUntil: "domcontentloaded",
-      timeout: 0,
+      waitUntil: "networkidle0"
     });
   
     /* Run javascript inside the page */
@@ -28,7 +27,6 @@ module.exports = async (url) => {
     });
 
     await page.waitForFunction('document.querySelector("html")');
-console.log(data)
     const dataa = (data);
     await browser.close();
     return (dataa)

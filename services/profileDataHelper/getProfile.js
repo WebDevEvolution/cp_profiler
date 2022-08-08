@@ -49,10 +49,10 @@ module.exports = async (profile, platform) => {
       //   getdata("https://leetcode.com/neal_wu/");
       console.log("https://www.hackerearth.com/@tanishqbhargava2509", "end");
     } else {
-      rawData = await axios.get(`${baseURL}${profile}${extras}`);
+      rawData = (await axios.get(`${baseURL}${profile}${extras}`)).data;
     }
 
-    const data = getPlatformBasedData(platform, rawData.data);
+    const data = getPlatformBasedData(platform, rawData);
     return { ...data, url: `${baseURL}${profile}${extras}` };
   } catch (err) {
     console.log(err.message, "ERROR");
